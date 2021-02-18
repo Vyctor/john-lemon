@@ -60,7 +60,13 @@ p {
     right: 45px;
     border-radius: 50%;
     z-index: 200;
-    transition: 1s ease-out;
+    transition: 0.5s ease-out;
+    border: none;
+    cursor: pointer;
+  }
+
+  .jl-btn-contact:focus {
+    outline: none;
   }
 
   .jl-contact-info {
