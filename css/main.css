@@ -60,14 +60,11 @@ p {
     right: 45px;
     border-radius: 50%;
     z-index: 200;
-    transition: 2s ease-out;
-  }
-
-  .jl-btn-contact:hover {
-    background-position-y: -45px;
+    transition: 1s ease-out;
   }
 
   .jl-contact-info {
+    display: none;
     width: 245px;
     height: 165px;
     padding: 25px;
@@ -223,4 +220,14 @@ p {
 }
 .jl-bg-black {
   background-color: #000;
+}
+
+/* CLASSES COMPORTAMENTO */
+
+.jl-is-open {
+  display: block;
+}
+
+.jl-change-icon {
+  background-position-y: -45px;
 }
