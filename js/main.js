@@ -1,10 +1,10 @@
 const btnContact = document.querySelector(".jl-btn-contact");
 
 window.addEventListener("load", function () {
-  const pagePreloader = document.querySelector(".jl-preloader");
+  var pagePreloader = document.querySelector(".jl-preloader");
   pagePreloader.classList.add("jl-fade-out");
 
-  setTimeout(() => {
+  setTimeout(function () {
     pagePreloader.style.display = "none";
   }, 2000);
 });
