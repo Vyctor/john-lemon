@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p,
@@ -14,6 +14,13 @@ label {
 @keyframes fadeOut {
   to {
     opacity: 0;
+  }
+}
+
+@keyframes slideTopIn {
+  to {
+    top: 15%;
+    opacity: 1;
   }
 }
 
@@ -60,15 +67,8 @@ label {
   }
 
   100% {
-    bottom: 5%;
+    bottom: 5px;
     opacity: 0;
-  }
-}
-
-@keyframes slideTopIn {
-  to {
-    top: 15%;
-    opacity: 1;
   }
 }
 
@@ -78,7 +78,7 @@ label {
     width: 100%;
     height: 100vh;
     display: table;
-    background: #1c1c1c;
+    background-color: #1c1c1c;
     border: 30px solid #000;
   }
 
@@ -110,11 +110,11 @@ label {
   }
 
   .jl-modal {
-    display: none;
     width: 800px;
-    position: fixed;
+    display: none;
     padding: 30px;
     border-radius: 0 30px 30px 30px;
+    position: fixed;
     top: -100%;
     left: 0;
     right: 0;
@@ -146,6 +146,12 @@ label {
     background-color: #2f2f2f;
   }
 
+  .jl-form label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: inline-block;
+  }
+
   .jl-field,
   .jl-textarea {
     width: 100%;
@@ -159,12 +165,6 @@ label {
 
   .jl-field {
     height: 45px;
-  }
-
-  .jl-form label {
-    font-size: 16px;
-    margin-bottom: 10px;
-    display: inline-block;
   }
 
   .jl-topbar {
@@ -183,7 +183,7 @@ label {
     float: left;
     margin-left: 60px;
     background-color: #2ccb69;
-    border-radius: 0 0 37% 0;
+    border-radius: 0 0 37px 0;
   }
 
   .jl-logo img {
@@ -192,6 +192,7 @@ label {
     display: block;
     margin: 55px auto 0 auto;
   }
+
   .jl-menu {
     display: none;
   }
@@ -208,17 +209,12 @@ label {
     right: 45px;
     border-radius: 50%;
     z-index: 200;
-    transition: 0.5s ease-out;
+    transition: all 0.2s ease-out;
     border: none;
     cursor: pointer;
   }
 
-  .jl-btn-contact:focus {
-    outline: none;
-  }
-
   .jl-contact-info {
-    display: none;
     width: 245px;
     height: 165px;
     padding: 25px;
@@ -226,6 +222,7 @@ label {
     bottom: 115px;
     right: 65px;
     z-index: 200;
+    display: none;
   }
 
   .jl-contact-info-inner {
@@ -243,6 +240,8 @@ label {
     width: 100%;
     height: 45px;
     display: block;
+    position: relative;
+    left: -12px;
     margin-top: 7px;
   }
 
@@ -250,15 +249,13 @@ label {
     width: 45px;
     height: 45px;
     display: inline-block;
-    position: relative;
-    left: -12px;
   }
 
   .jl-social > img {
-    display: block;
     width: 20px;
     height: auto;
-    margin: 14px auto 0;
+    display: block;
+    margin: 13px auto 0;
   }
 
   .jl-corner {
@@ -269,18 +266,19 @@ label {
     display: relative;
   }
 
-  .jl-corner::after {
+  .jl-corner:after {
     content: "";
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    height: 25px;
     display: block;
     position: absolute;
-    bottom: -20px;
+    bottom: -23px;
     right: 0;
     background: transparent url("../images/corner.svg") no-repeat;
   }
 
-  /*--HOME--*/
+  /*----HOME----*/
+
   .jl-display-text {
     margin-top: 10%;
   }
@@ -289,7 +287,7 @@ label {
     background-image: url("../images/joao-lemon-designer-home.png");
     background-repeat: no-repeat;
     background-position: 50% bottom;
-    position: absolute;
+    position: relative;
   }
 
   .jl-scroll-down {
@@ -327,7 +325,7 @@ label {
     animation: arrowDown 1.5s linear 1.5s infinite;
   }
 
-  .jl-arrow-down::before {
+  .jl-arrow-down:before {
     content: "";
     width: 2px;
     height: 45px;
@@ -338,7 +336,7 @@ label {
     right: 0;
     margin: 0 auto;
     background-color: #000;
-    animation: lineDown 1.5s infinite ease-out 1.5s;
+    animation: lineDown 1.5s ease-out infinite;
     transform-origin: top center;
   }
 }
@@ -361,8 +359,8 @@ label {
     font-family: "Open Sans";
     font-size: 16px;
     color: #bcbcbc;
-    text-transform: lowercase;
     text-decoration: none;
+    text-transform: lowercase;
     display: inline-block;
     margin: 50px 20px 0 20px;
     font-weight: 400;
@@ -405,14 +403,15 @@ label {
 @media screen and (min-width: 1600px) {
 }
 
-/* BOTÕES*/
+/* BOTÕES */
+
 .jl-btn {
   display: table;
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   border: none;
-  transition: all 0.2 ease-out;
+  transition: all 0.2s ease-out;
   text-transform: lowercase;
 }
 
@@ -439,7 +438,7 @@ label {
   height: 45px;
   padding: 0 35px;
   border-radius: 23px;
-  font-size: 32px;
+  font-size: 16px;
 }
 
 .jl-btn-green {
@@ -462,38 +461,49 @@ label {
   color: #fff;
 }
 
-/* CLASSES UTILITÁRIAS */
+/* CLASSES UTILITARIAS */
+
 .jl-title {
   font-family: "Abril Fatface", serif;
   font-weight: normal;
 }
+
 .jl-title-big {
   font-size: 120px;
 }
+
 .jl-text-green {
   color: #2ccb69;
 }
+
 .jl-text-dark {
   color: #4d4c4c;
 }
+
 .jl-text-light {
   color: #bcbcbc;
 }
+
 .jl-text-black {
   color: #000;
 }
+
 .jl-bg-green {
   background-color: #2ccb69;
 }
+
 .jl-bg-dark {
   background-color: #4d4c4c;
 }
+
 .jl-bg-light {
   background-color: #bcbcbc;
 }
+
 .jl-bg-black {
   background-color: #000;
 }
+
 .jl-mar-15 {
   margin: 15px;
 }
@@ -503,44 +513,51 @@ label {
 .jl-mar-right-15 {
   margin-right: 15px;
 }
-.jl-mar-left-15 {
-  margin-left: 15px;
-}
 .jl-mar-bottom-15 {
   margin-bottom: 15px;
 }
+.jl-mar-left-15 {
+  margin-left: 15px;
+}
+
 .jl-pad-15 {
   padding: 15px;
 }
-.jl-mar-pad-15 {
+.jl-pad-top-15 {
   padding-top: 15px;
 }
-.jl-mar-pad-15 {
+.jl-pad-right-15 {
   padding-right: 15px;
 }
-.jl-mar-pad-15 {
-  padding-left: 15px;
-}
-.jl-mar-pad-15 {
+.jl-pad-bottom-15 {
   padding-bottom: 15px;
 }
+.jl-pad-left-15 {
+  padding-left: 15px;
+}
+
 .jl-full-height {
   height: 100vh;
 }
+
 .jl-first-section {
   height: calc(100vh - 30px);
 }
 
 /* CLASSES COMPORTAMENTO */
+
 .jl-is-open {
   display: block;
 }
-.jl-slideTopIn {
-  animation: slideTopIn 1s forwards ease-in-out;
+
+.jl-slide-top-in {
+  animation: slideTopIn 0.6s forwards cubic-bezier(0, 1.11, 0.6, 0.89);
 }
+
 .jl-change-icon {
   background-position-y: -45px;
 }
+
 .jl-fade-out {
   animation: fadeOut 2s forwards ease-out;
 }
