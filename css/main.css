@@ -65,6 +65,13 @@ label {
   }
 }
 
+@keyframes slideTopIn {
+  to {
+    top: 15%;
+    opacity: 1;
+  }
+}
+
 @media screen and (min-width: 320px) {
   .jl-page-wrapper,
   .jl-preloader {
@@ -94,7 +101,7 @@ label {
   .jl-overlay {
     width: 100%;
     height: 100vh;
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -103,16 +110,17 @@ label {
   }
 
   .jl-modal {
+    display: none;
     width: 800px;
     position: fixed;
-    display: table;
     padding: 30px;
     border-radius: 0 30px 30px 30px;
-    top: 15%;
+    top: -100%;
     left: 0;
     right: 0;
     margin: 0 auto;
     z-index: 1200;
+    opacity: 0;
   }
 
   .jl-modal-header,
@@ -526,6 +534,9 @@ label {
 /* CLASSES COMPORTAMENTO */
 .jl-is-open {
   display: block;
+}
+.jl-slideTopIn {
+  animation: slideTopIn 1s forwards ease-in-out;
 }
 .jl-change-icon {
   background-position-y: -45px;
