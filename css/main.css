@@ -339,6 +339,50 @@ label {
     animation: lineDown 1.5s ease-out infinite;
     transform-origin: top center;
   }
+
+  /*---- Home - Portfolio ----*/
+  .jl-portfolio-nagivator {
+    width: 145px;
+    height: 400px;
+    display: table;
+    background-color: red;
+    position: absolute;
+    top: 26vh;
+    left: 15px;
+  }
+
+  .jl-item-counter {
+    width: 100%;
+    height: 90px;
+    display: block;
+    background-color: blue;
+    margin-bottom: 60px;
+  }
+
+  .jl-item-navigator {
+    width: 100%;
+    display: table;
+    background-color: limegreen;
+  }
+
+  .jl-item-navigator a {
+    width: 20px;
+    height: 1px;
+    background-color: purple;
+    display: block;
+    margin-bottom: 80px;
+  }
+
+  .jl-item-navigator a:last-child {
+    margin-bottom: 30px;
+  }
+
+  .jl-portfolio-next-prev {
+    width: 100%;
+    height: 45px;
+    background-color: deeppink;
+    display: block;
+  }
 }
 
 @media screen and (min-width: 576px) {
@@ -538,6 +582,7 @@ label {
 
 .jl-full-height {
   height: 100vh;
+  position: relative;
 }
 
 .jl-first-section {
