@@ -10,6 +10,10 @@ const containerWidth = sliderContainer.parentElement.offsetWidth
 // Capturando itens de navegação do Slider
 const prevItem = document.querySelector(".jl-item-prev")
 const nextItem = document.querySelector(".jl-item-next")
+const currentSlideNavigation = document.querySelector(".jl-current-slide")
+const totalSlideNavitagion = document.querySelector(".jl-total-slide")
+const totalSliderItem = sliderItem.length
+
 let sliderPosition = 0
 
 //Passando larguras dinâmicas
@@ -49,5 +53,12 @@ const handlePrevSlideAnimation = () => {
   })
 }
 
+// CONTENT FORMATTER
+const counterFormatter = (number) => {
+  return number >= 1 && number < 10 ? `0${number}` : number
+}
+
+// ACTIONS
 nextItem.addEventListener("click", handleNextSlideAnimation)
 prevItem.addEventListener("click", handlePrevSlideAnimation)
+totalSlideNavitagion.innerHTML = counterFormatter(totalSliderItem)
