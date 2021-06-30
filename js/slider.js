@@ -13,6 +13,7 @@ const nextItem = document.querySelector(".jl-item-next")
 const currentSlideNavigation = document.querySelector(".jl-current-slide")
 const totalSlideNavitagion = document.querySelector(".jl-total-slide")
 const totalSliderItem = sliderItem.length
+let currentCounter = 1
 
 let sliderPosition = 0
 
@@ -58,7 +59,27 @@ const counterFormatter = (number) => {
   return number >= 1 && number < 10 ? `0${number}` : number
 }
 
+const counterAdd = () => {
+  if (currentCounter >= 0 && currentCounter < totalSliderItem) {
+    currentCounter++
+    currentSlideNavigation.innerHTML = counterFormatter(currentCounter)
+  }
+}
+
+const counterSubtract = () => {
+  if (currentCounter > 1 && currentCounter <= totalSliderItem) {
+    currentCounter--
+    currentSlideNavigation.innerHTML = counterFormatter(currentCounter)
+  }
+}
+
 // ACTIONS
-nextItem.addEventListener("click", handleNextSlideAnimation)
-prevItem.addEventListener("click", handlePrevSlideAnimation)
+nextItem.addEventListener("click", () => {
+  handleNextSlideAnimation()
+  counterAdd()
+})
+prevItem.addEventListener("click", () => {
+  handlePrevSlideAnimation()
+  counterSubtract()
+})
 totalSlideNavitagion.innerHTML = counterFormatter(totalSliderItem)
